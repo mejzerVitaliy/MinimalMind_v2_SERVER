@@ -24,7 +24,7 @@ class UserController {
         try {
             const { id } = req.params;
             !id && res.status(400).json({message: 'There is not ID'})
-            const user = await User.findById(id)
+            const user = await User.findOne({id})
             return res.json(user)
         } catch (error) {
             res.status(500).json(error)
