@@ -13,7 +13,9 @@ app.use(cors({
     methods: ['GET', 'POST', 'PUT', 'DELETE']
 }))
 app.use('/api', router)
-
+app.get('/', (req, res) => {
+    res.send('Server is running!');
+});
 
 async function startApp() {
     try {
